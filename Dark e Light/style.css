@@ -1,0 +1,85 @@
+/* Reset básico de margem, padding e borda para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página em tema claro */
+body {
+    background-color: white; /* Cor de fundo padrão (claro) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    transition: background 0.2s linear; /* Transição suave ao alterar a cor de fundo */
+}
+
+div {
+    position: fixed;
+    /* Mantém o seletor fixo na tela, mesmo quando você rolar */
+    top: 15px;
+    /* Define a distância de 10 pixels do topo da tela */
+    right: 18px;
+    /* Define a distância de 10 pixels da direita da tela */
+}
+/* Estilo para o corpo da página em tema escuro */
+body.dark {
+    background-color: black; /* Cor de fundo para o tema escuro */
+    color: white; /* Cor do texto para garantir contraste com o fundo escuro */
+}
+
+/* Estilo para o checkbox invisível */
+.checkbox {
+    opacity: 0; /* Deixa o checkbox invisível */
+    position: absolute;
+}
+
+/* Estilo para o label que representa o switch para alternar entre temas */
+.label {
+    background-color: gray; /* Cor de fundo padrão do switch */
+    border-radius: 50px; /* Bordas arredondadas */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+    transform: scale(1.5); /* Aumenta o tamanho do switch */
+}
+
+/* Estilo para a "bola" dentro do switch */
+.label .ball {
+    background-color: white; /* Cor de fundo branca */
+    border-radius: 50%; /* Formato circular */
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translate(0px); /* Posição inicial à esquerda */
+    transition: transform 0.2s linear; /* Transição suave ao mover a bola */
+    /* Adiciona uma borda para a bola para visibilidade em tema escuro */
+    border: 2px solid black;
+}
+
+/* Quando o checkbox é marcado, move a bola para a direita */
+.checkbox:checked + .label .ball {
+    transform: translate(24px);
+    /* Adiciona borda para a bola quando marcada para visibilidade em tema claro */
+    border: 2px solid white;
+}
+
+/* Estilo para o ícone de lua (tema escuro) */
+.fa-moon {
+    color: yellowgreen; /* Cor do ícone de lua */
+}
+
+/* Estilo para o ícone de sol (tema claro) */
+.fa-sun {
+    color: orange; /* Cor do ícone de sol */
+}
